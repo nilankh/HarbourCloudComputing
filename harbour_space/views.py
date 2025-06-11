@@ -34,6 +34,7 @@ class BookShiftsView(APIView):
         for _ in range(max_retries):
             try:
                 res = requests.post(BOOKING_URL, json=shift)
+                print("line 37", res)
                 if res.status_code == 200:
                     return True
             except requests.RequestException:
